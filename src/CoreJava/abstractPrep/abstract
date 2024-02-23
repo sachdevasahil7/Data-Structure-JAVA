@@ -1,0 +1,5 @@
+
+
+abstract class does not allow method creation of that class
+abstract class can contain normal method only
+if abstract class has no abstract method then still we're not allowed to make object of that class

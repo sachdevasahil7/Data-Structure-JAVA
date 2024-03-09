@@ -1,0 +1,6 @@
+
+
+In Java 2D Array matrix implementation comes with wastage of memory.some people use
+arrays of array to create multi dimension array, its well memory utilizable.
+
+

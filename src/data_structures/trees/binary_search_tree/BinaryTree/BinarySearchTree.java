@@ -4,8 +4,13 @@ package data_structures.trees.binary_search_tree.BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
+import static data_structures.trees.binary_search_tree.BinaryTree.BinaryTreeDiameter.treeDiameter;
+import static data_structures.trees.binary_search_tree.BinaryTree.EvaluateExpressionTree.calculateExpression;
+import static data_structures.trees.binary_search_tree.BinaryTree.LeftViewOfBinaryTree.leftView;
+import static data_structures.trees.binary_search_tree.BinaryTree.LevelOrderTraversal.levelOrderTraversal;
 import static data_structures.trees.binary_search_tree.BinaryTree.PrintBST.printTree;
 import static data_structures.trees.binary_search_tree.BinaryTree.TreeDepth.nodeDepth;
+import static data_structures.trees.binary_search_tree.BinaryTree.ValidateBST.validateBST;
 
 /**
  * @author Sahil on 01/06/2024
@@ -114,8 +119,8 @@ public class BinarySearchTree {
     public static void main(String[] args) {
 
 //        int values[]={10,15,22,13,14,5,2,1};
-        int values[]={7,4,9,10,6};
-//        int values[]={5,1,3,4,2,7,9,8};
+//        int values[]={7,4,9,10,6};
+        int values[]={50,20,80,15,21,5,90,75};
 //        int values[]={1,2,3,4,5,6,7,8,9,10};
 //        int values[]={100,502,55000,1001,4500,204,205,207,208,206,203,5,15,22,57,60,5,2,3,1,1,1,1,1,-51,-403};
         BinarySearchTree bst=new BinarySearchTree();
@@ -124,8 +129,11 @@ public class BinarySearchTree {
             root=bst.insertAsTree(root,value);
         }
         printTree(root);
-
-        System.out.println(nodeDepth(root));
+        levelOrderTraversal(root);
+//        leftView(root);
+//        System.out.println(validateBST(root));
+//        printTree(root);
+//        System.out.println(nodeDepth(root));
 
     }
 }

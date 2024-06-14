@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcb1ac63-1d2c-4aaf-b881-a8a0fff44319" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/PrintBST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/BinaryTreeDiameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/EvaluateExpressionTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/InvertBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/LeftViewOfBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/LevelOrderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/ValidateBST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Structure-JAVA/data_structures/trees/binary_search_tree/BinaryTree/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Structure-JAVA/data_structures/trees/binary_search_tree/BinaryTree/BinarySearchTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/BinarySearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +164,10 @@
       <workItem from="1716872500086" duration="169000" />
       <workItem from="1716924762388" duration="44469000" />
       <workItem from="1717981348977" duration="1541000" />
-      <workItem from="1718135195161" duration="12211000" />
+      <workItem from="1718135195161" duration="21009000" />
+      <workItem from="1718226072399" duration="14794000" />
+      <workItem from="1718365545054" duration="595000" />
+      <workItem from="1718372311000" duration="4631000" />
     </task>
     <servers />
   </component>
@@ -188,9 +196,29 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/BinarySearchTree.java</url>
-          <line>167</line>
-          <option name="timeStamp" value="99" />
+          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/EvaluateExpressionTree.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/EvaluateExpressionTree.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/ValidateBST.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/ValidateBST.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_structures/trees/binary_search_tree/BinaryTree/LeftViewOfBinaryTree.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/data_structures/arrays/TournamentWinner.java</url>

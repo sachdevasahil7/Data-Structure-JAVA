@@ -11,6 +11,7 @@ import static data_structures.trees.binary_search_tree.BinaryTree.LevelOrderTrav
 import static data_structures.trees.binary_search_tree.BinaryTree.PrintBST.printTree;
 import static data_structures.trees.binary_search_tree.BinaryTree.TreeDepth.nodeDepth;
 import static data_structures.trees.binary_search_tree.BinaryTree.ValidateBST.validateBST;
+import static data_structures.trees.binary_search_tree.BinaryTree.ZigZagBinaryTree.ZigZagTraversal;
 
 /**
  * @author Sahil on 01/06/2024
@@ -120,18 +121,21 @@ public class BinarySearchTree {
 
 //        int values[]={10,15,22,13,14,5,2,1};
 //        int values[]={7,4,9,10,6};
-        int values[]={50,20,80,15,21,5,90,75};
+//        int values[]={50,20,80,15,21,5,90,75};
+        int values[]={1,2,5,7,10,13,14,15,20};
+//        int values[]={3,5,4};
 //        int values[]={1,2,3,4,5,6,7,8,9,10};
 //        int values[]={100,502,55000,1001,4500,204,205,207,208,206,203,5,15,22,57,60,5,2,3,1,1,1,1,1,-51,-403};
         BinarySearchTree bst=new BinarySearchTree();
         Node root= null;
-        for(int value:values) {
-            root=bst.insertAsTree(root,value);
-        }
-        printTree(root);
-        levelOrderTraversal(root);
+//        for(int value:values) {
+//            root=bst.insertAsTree(root,value);
+//        }
+//        printTree(root);
+        new MinHeightTree().minHeight(values);
+//        ZigZagTraversal(root);
 //        leftView(root);
-//        System.out.println(validateBST(root));
+//        System.out.println(new CheckSameLevel().checkSameLevel(root));
 //        printTree(root);
 //        System.out.println(nodeDepth(root));
 

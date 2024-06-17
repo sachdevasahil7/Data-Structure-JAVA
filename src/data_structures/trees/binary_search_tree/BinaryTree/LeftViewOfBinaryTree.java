@@ -10,12 +10,15 @@ public class LeftViewOfBinaryTree {
 
     public static void leftView(Node node){
         ArrayList<Integer>list= new ArrayList<>();
-        helper(node,0,list);
+        int level=0;
+        helper(node,level,list);
+        System.out.println("level:::"+level);
         for (Integer num:list){
             System.out.print("-->"+num);
         }
     }
 
+//todo debug and understand logic
     public static void helper(Node node,int level,ArrayList<Integer>list){
         if (node==null){
             return;

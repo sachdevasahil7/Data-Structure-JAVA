@@ -12,6 +12,7 @@ public class InvertBinaryTree {
         }
         Node left=invertTree(node.left);
         Node right=invertTree(node.right);
+        System.out.print("-->"+node.data);
         node.left=right;
         node.right=left;
         return node;

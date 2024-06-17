@@ -23,7 +23,6 @@ public class RootToLeafPath {
             rootToLeafPath(node.left,list);
             rootToLeafPath(node.right,list);
         }
-
         list.remove(list.size()-1);
     }
 }

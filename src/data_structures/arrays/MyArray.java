@@ -1,5 +1,7 @@
 package data_structures.arrays;
 
+import java.util.AbstractList;
+import java.util.AbstractSequentialList;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -55,6 +57,9 @@ public class MyArray {
 
   public static void main(String[] args) {
     MyArray m = new MyArray();
+    Integer num=127;
+    Integer num1=127;
+    System.out.println(num==num1);
     m.push("Hello");
     m.push("World");
 

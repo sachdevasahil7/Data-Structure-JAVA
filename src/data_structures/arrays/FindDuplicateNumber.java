@@ -1,6 +1,7 @@
 package data_structures.arrays;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Sahil on 08/04/2024
@@ -8,8 +9,50 @@ import java.util.Arrays;
 public class FindDuplicateNumber {
 
     public static void main(String[] args) {
-        int[] duplicate={1, 1, 2, 2, 3, 4, 5};
-        findDuplicateInArray(duplicate);
+        int[] duplicate={3,5,2,4};
+        String  haystack = "sadbutsad";
+        String needle = "sad";
+
+//        System.out.println(countPairs(Arrays.asList(duplicate),2));
+        System.out.println(maxNumOfMarkedIndices(duplicate));
+    }
+    public static int maxNumOfMarkedIndices(int[] nums) {
+        int count=0;
+        int left=0;
+        int median=nums.length+1/2;
+        int right=median+1;
+        Arrays.sort(nums);
+        while(left<=median){
+            boolean result=2*nums[left]<=nums[right];
+            if(result){
+                count=count+2;
+            }
+            if(right==nums.length-1){
+                left=left+1;
+                right=nums.length-1;
+                continue;
+            }
+            right=right+1;
+        }
+        return count;
+    }
+    public static  int countPairs(List<Integer> nums, int target) {
+        int count=0;
+        int left=0;
+        int right=nums.size()-1;
+        while(left<right){
+            int sum=nums.get(left)+nums.get(right);
+            if(sum<target){
+                count++;
+            }
+            if(left==right-1){
+                left=left+1;
+                right=nums.size()-1;
+                continue;
+            }
+            right=right-1;
+        }
+        return count;
     }
     public static int [] findDuplicateInArray(int[] arr){
         int[] uniqueArr= new int[arr.length];

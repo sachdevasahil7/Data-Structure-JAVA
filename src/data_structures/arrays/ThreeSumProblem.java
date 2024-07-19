@@ -9,15 +9,15 @@ import java.util.List;
  */
 public class ThreeSumProblem {
     public static void main(String[] args) {
-        int[] arr={12, 3, 1, 2, -6, 5, -8, 6};
+        int[] arr={-1,0,1,2,-1,-4};
 //        int[] arr={8, 10, -2, 49, 14};
-        List<Integer[]> result=threeNumberSum(arr,0);
-        for (Integer[]ar:result){
-            System.out.println(Arrays.toString(ar));
+        List<List<Integer>> result=threeNumberSum(arr,0);
+        for (List ar:result){
+            System.out.println(Arrays.toString(ar.toArray()));
         }
     }
-    public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
-      List<Integer[]> result= new ArrayList<>();
+    public static List<List<Integer>> threeNumberSum(int[] array, int targetSum) {
+      List<List<Integer>> result= new ArrayList<>();
         Arrays.sort(array);
         for(int i=0;i<array.length-2;i++){
             int left=i+1;
@@ -25,11 +25,11 @@ public class ThreeSumProblem {
             while (left<right){
                 int sum=array[i]+array[left]+array[right];
                 if (sum==targetSum){
-                    Integer[] arr= new Integer[3];
-                    arr[0]=array[i];
-                    arr[1]=array[left];
-                    arr[2]=array[right];
-                    result.add(arr);
+                    List<Integer>list=new ArrayList<>();
+                    list.add(array[i]);
+                    list.add(array[left]);
+                    list.add(array[right]);
+                    result.add(list);
                     left+=1;
                     right-=1;
                 }

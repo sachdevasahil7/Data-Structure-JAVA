@@ -21,10 +21,12 @@ public class TournamentWinner {
         data.add("HTML");
         finalData.add(data);
         ArrayList<Integer> resultList= new ArrayList<>();
+        resultList.get(0);
+        resultList.get(resultList.size());
         resultList.add(0);
         resultList.add(0);
         resultList.add(1);
-
+        Map<Integer,Integer> map = new HashMap<>();
         System.out.println(new TournamentWinner().tournamentWinner(finalData,resultList));
 
     }

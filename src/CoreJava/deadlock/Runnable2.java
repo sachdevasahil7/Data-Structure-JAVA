@@ -23,7 +23,7 @@ public class Runnable2 implements Runnable{
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
-        //do nothing
+        //do nothing 
         }
         System.out.println("thread "+Thread.currentThread().getName()+" trying to take lock");
         lock1.lock();

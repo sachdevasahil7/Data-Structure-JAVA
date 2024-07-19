@@ -13,7 +13,6 @@ public class ZeroSumSubarray {
         System.out.println(new ZeroSumSubarray().zeroSumSubarray(arr));
     }
 
-
     public boolean zeroSumSubarray(int[] nums) {
         Set<Integer> set= new HashSet<>();
         set.add(0);

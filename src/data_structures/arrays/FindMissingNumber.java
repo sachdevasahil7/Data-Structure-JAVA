@@ -8,8 +8,8 @@ import java.util.Set;
  */
 public class FindMissingNumber {
     public static void main(String[] args) {
-       int[] myArray = {1,2,3,4,6};
-        System.out.println(findMissingNumber(myArray));
+       int[] myArray = {11,12,13,14,16};
+        System.out.println(findMissing(myArray));
     }
     public static int findMissingNumber(int[] arr){
         int n=arr[arr.length-1];
@@ -18,8 +18,20 @@ public class FindMissingNumber {
         for(int array:arr){
             actualSum+=array;
         }
-        System.out.println(sumOfNaturalNumber);
-        System.out.println(actualSum);
         return sumOfNaturalNumber-actualSum;
+    }
+
+    public static int findMissing(int[] arr){
+        if(arr==null||arr.length==0){
+            return 0;
+        }
+        int missingNum=Integer.MIN_VALUE;
+        for(int i=1;i< arr.length;i++){
+            if(arr[i]!=arr[i-1]+1){
+                missingNum=arr[i-1]+1;
+                break;
+            }
+        }
+        return missingNum;
     }
 }

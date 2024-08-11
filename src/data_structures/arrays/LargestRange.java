@@ -15,14 +15,13 @@ public class LargestRange {
     }
     public static int[] largestRange(int[] arr) {
         int[] result=new int[2];
-        Set<Integer> set= new HashSet<Integer>();
+        Set<Integer> set= new TreeSet<>();
 
         int prevCount=0;
         for (int num:arr){
             set.add(num);
         }
          arr= set.stream().mapToInt(Integer::intValue).toArray();
-        Arrays.sort(arr);
         for(int i=0;i<=arr.length-2;i++){
             if(arr[i+1]==arr[i]+1){
                 int endRange=calculateRange(arr,i);

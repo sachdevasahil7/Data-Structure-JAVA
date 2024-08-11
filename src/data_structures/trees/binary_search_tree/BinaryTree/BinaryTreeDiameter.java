@@ -1,32 +1,24 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @author Sahil on 12/06/2024
  */
 public class BinaryTreeDiameter {
-
-
+   static int max=0;
     public static int treeDiameter(Node node){
-        int max=0;
         if (node==null){
-            return max;
+            return 0;
         }
-        treeDiameter(node.left);
-        treeDiameter(node.right);
-        if (node.left!=null&node.right!=null){
-            int num=calculateSubtree(node,0);
-            if (max<num){
-                max=num;
-            }
+        int left=treeDiameter(node.left);
+        int right=treeDiameter(node.right);
+        if(max<(left+right)){
+            max=left+right;
         }
-        return max;
-    }
-    public static int calculateSubtree(Node node,int length){
-        if (node==null){
-            return length;
-        }
-        int leftLen=calculateSubtree(node.left,length+1);
-        int rightLe=calculateSubtree(node.right,length+1);
-        return leftLen>rightLe?leftLen:rightLe;
+        List lis= new ArrayList();
+        return left>right?left+1:right+1;
     }
 }

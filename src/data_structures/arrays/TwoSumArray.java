@@ -9,8 +9,8 @@ public class TwoSumArray {
 
 
     public static void main(String[] args) {
-        int[] arr= {3,4,2};
-        System.out.println(Arrays.toString(twoSumWithTwoPointer(arr,6)));
+        int[] arr= {4,6,1};
+        System.out.println(Arrays.toString(twoSum(arr,5)));
     }
 
 

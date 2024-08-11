@@ -6,9 +6,6 @@ import java.util.*;
  * @author Sahil on 14/06/2024
  */
 public class ZigZagBinaryTree {
-
-
-
     public static void ZigZagTraversal(Node node){
         if (node==null){
             return;

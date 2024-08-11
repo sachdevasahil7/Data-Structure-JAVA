@@ -28,5 +28,26 @@ public static int calculateExpression(Node node){
     return node.data;
 }
 
-
+    public static int evaluateExpressionTree(Node node) {
+        if (node.left==null&&node.right==null){
+            return node.data;
+        }
+        int left=evaluateExpressionTree(node.left);
+        int right=evaluateExpressionTree(node.right);
+        if (node.left!=null&&node.right!=null){
+            if (node.data==-4){
+                return left*right;
+            }
+            else if (node.data==-2){
+                return left-right;
+            }
+            else if (node.data==-3){
+                return left/right;
+            }
+            else if(node.data==-1){
+                return left+right;
+            }
+        }
+        return 0;
+    }
 }

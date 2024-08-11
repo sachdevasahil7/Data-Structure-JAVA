@@ -1,18 +1,10 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static data_structures.trees.binary_search_tree.BinaryTree.BinaryTreeDiameter.treeDiameter;
 import static data_structures.trees.binary_search_tree.BinaryTree.EvaluateExpressionTree.calculateExpression;
-import static data_structures.trees.binary_search_tree.BinaryTree.InvertBinaryTree.invertTree;
-import static data_structures.trees.binary_search_tree.BinaryTree.LeftViewOfBinaryTree.leftView;
-import static data_structures.trees.binary_search_tree.BinaryTree.LevelOrderTraversal.levelOrderTraversal;
+import static data_structures.trees.binary_search_tree.BinaryTree.EvaluateExpressionTree.evaluateExpressionTree;
 import static data_structures.trees.binary_search_tree.BinaryTree.PrintBST.printTree;
 import static data_structures.trees.binary_search_tree.BinaryTree.TreeDepth.nodeDepth;
-import static data_structures.trees.binary_search_tree.BinaryTree.ValidateBST.validateBST;
-import static data_structures.trees.binary_search_tree.BinaryTree.ZigZagBinaryTree.ZigZagTraversal;
 
 /**
  * @author Sahil on 01/06/2024
@@ -133,7 +125,8 @@ public class BinarySearchTree {
             root=bst.insertAsTree(root,value);
         }
         printTree(root);
-        System.out.println(new AllKindOfNodeDepths().allKindOfNodeDepth(root,0));
+        System.out.println(treeDiameter(root));
+//        System.out.println(new AllKindOfNodeDepths().allKindOfNodeDepth(root,0));
 //        new CheckSameLevel().checkSameLevel(root);
 //        printTree(root);
 

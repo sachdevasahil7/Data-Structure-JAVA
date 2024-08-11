@@ -8,10 +8,9 @@ import java.util.*;
  */
 public class LongestSubarrayWithSum {
     public static void main(String[] args) {
-        int[]arr={61, 54, 1, 499, 2212, 4059, 1, 2, 3, 1, 3};
-        System.out.println(Arrays.toString(longestSubarrayWithSum(arr,19)));
+        int[]arr={0, 0, 0, 0, 0, 1, 0, 0, 0, 0};
+        System.out.println(Arrays.toString(longestSubArray(arr,1)));
     }
-
 
     public static int[] longestSubarrayWithSum(int[] array, int targetSum) {
         if(array.length==1){
@@ -48,5 +47,59 @@ public class LongestSubarrayWithSum {
         }
         return new int[]{0};
     }
+    public static int[] longestArray(int[] array,int target){
+        TreeMap<Integer,Integer[]>map= new TreeMap<>();
+        int index=0;
+        int j=index+1;
+        int sum=array[index];
+        while(index<array.length-2){
+            if (j==array.length){
+                index++;
+                j=index;
+                sum=array[index];
+            }
+            sum=sum+array[j];
+            if(sum==target){
+                map.put(j-index,new Integer[]{index,j});
+                index++;
+                j=index;
+                sum=array[index];
+            }else  if (sum>target){
+                index++;
+                j=index;
+                sum=array[index];
+            }
+            j++;
+        }
+        if (!map.isEmpty())
+        return Arrays.stream(map.lastEntry().getValue()).mapToInt(Integer::intValue).toArray();
+       return new int[]{};
+    }
+
+    public static int[] longestSubArray(int[] array,int target){
+        TreeMap<Integer,Integer[]>map= new TreeMap<>();
+        int index=0;
+        int j=1;
+        int sum=array[index];
+        while(index<array.length-2&&j<array.length-1){
+          sum=sum+array[j];
+          if(sum==target){
+              map.put(j-index,new Integer[]{index,j});
+              index=j;
+          }
+          else if(sum>target){
+              index++;
+              j=index+1;
+              sum=array[index];
+          }else{
+              j++;
+          }
+        }
+        if (!map.isEmpty())
+            return Arrays.stream(map.lastEntry().getValue()).mapToInt(Integer::intValue).toArray();
+        return new int[]{};
+    }
+
+
 
 }

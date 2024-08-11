@@ -15,7 +15,6 @@ public class TwoSumProblem {
     public static int[] twoSum(int[] arr,int target){
         int[] result= new int[2];
         Map<String,Object> hashmap= new HashMap<>();
-
         for (int i=0;i<arr.length;i++){
             if (hashmap.containsKey(String.valueOf(target-arr[i]))){
                 result[1]=i;

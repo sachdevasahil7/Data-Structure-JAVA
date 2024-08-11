@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ThreeSumProblem {
     public static void main(String[] args) {
-        int[] arr={-1,0,1,2,-1,-4};
+        int[] arr={12, 3, 1, 2, -6, 5, -8, 6};   //
 //        int[] arr={8, 10, -2, 49, 14};
         List<List<Integer>> result=threeNumberSum(arr,0);
         for (List ar:result){
@@ -18,9 +18,9 @@ public class ThreeSumProblem {
     }
     public static List<List<Integer>> threeNumberSum(int[] array, int targetSum) {
       List<List<Integer>> result= new ArrayList<>();
-        Arrays.sort(array);
+        Arrays.sort(array); //3 pointer
         for(int i=0;i<array.length-2;i++){
-            int left=i+1;
+            int left=i+1; //0 1
             int right=array.length-1;
             while (left<right){
                 int sum=array[i]+array[left]+array[right];

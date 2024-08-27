@@ -9,9 +9,9 @@ public class MinimumMaximum {
 
 
     public static void main(String[] args) {
-        int[] arr = {0,-4,19,1,8,-2,-3,5};
-//        System.out.println(Arrays.toString(findMinMAx(arr)));
-        System.out.println(minimumDeletions(arr));
+        int[] arr = {20,-40,-6,-79,-85,-95};
+        System.out.println(inimumDeletions(arr));
+//        System.out.println(minimumDeletions(arr));
     }
     public static int[] findMinMAx(int[] arr){
         int min=arr[0];
@@ -25,6 +25,46 @@ public class MinimumMaximum {
             }
         }
         return new int[]{min,max};
+    }
+    public static int inimumDeletions(int[] arr) {
+        int min=arr[0],max=arr[arr.length-1];
+        int left=1,right=arr.length-2;
+        int minIndex=0,maxIndex=arr.length;
+        if (min>max){
+            min=max;
+            max=arr[0];
+            minIndex=maxIndex;
+            maxIndex=0;
+        }
+        while(left<right){
+            if (arr[left]<min){
+                min=arr[left];
+                minIndex=left;
+            } if(arr[right]>max){
+                max=arr[right];
+                maxIndex=right;
+            } if(arr[right]<min){
+                min=arr[right];
+                minIndex=right;
+            } if (arr[left]>max){
+                max=arr[left];
+                maxIndex=left;
+            }
+            left++;
+            right--;
+        }
+        if(minIndex>maxIndex){
+            int temp=minIndex;
+            minIndex=maxIndex;
+            maxIndex=temp;
+        }
+        int result=0;
+        if(maxIndex<arr.length/2){
+           result=minIndex+maxIndex;
+        }else{
+            result=(minIndex+1)+maxIndex-arr.length-1;
+        }
+        return result;
     }
 
 

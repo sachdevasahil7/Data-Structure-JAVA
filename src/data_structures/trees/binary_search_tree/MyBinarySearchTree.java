@@ -63,7 +63,6 @@ public class MyBinarySearchTree {
     if (root == null) {
       return;
     }
-
     MyBinaryNode nodeToRemove = root;
     MyBinaryNode parentNode = null;
     while (nodeToRemove.getValue() != value) { //Searching for the node to remove and it's parent
@@ -74,7 +73,6 @@ public class MyBinarySearchTree {
         nodeToRemove = nodeToRemove.getRight();
       }
     }
-
     MyBinaryNode replacementNode = null;
     if (nodeToRemove.getRight() != null) { //We have a right node
       replacementNode = nodeToRemove.getRight();
@@ -93,7 +91,6 @@ public class MyBinarySearchTree {
     } else if(nodeToRemove.getLeft() != null) {//We only have a left node
       replacementNode = nodeToRemove.getLeft();
     }
-
     if(parentNode == null) {
       root = replacementNode;
     } else if(parentNode.getLeft() == nodeToRemove) { //We are a left child
@@ -102,7 +99,6 @@ public class MyBinarySearchTree {
       parentNode.setRight(replacementNode);
     }
   }
-
   int count = 0;
   public void printTree() {
     count = 0;

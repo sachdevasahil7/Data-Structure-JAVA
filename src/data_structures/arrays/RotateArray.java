@@ -13,10 +13,12 @@ public class RotateArray {
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
         rotateArray(nums, 0, nums.length - 1);
+
         rotateArray(nums, 0, k - 1);
+
         rotateArray(nums, k, nums.length - 1);
     }
-
+    //
     public int[] rotateArray(int[] arr,int startIndex,int endIndex){
         while (startIndex<endIndex){
             int temp=arr[startIndex];
@@ -26,5 +28,7 @@ public class RotateArray {
             endIndex--;
         }
         return arr;
+        //6,5,4,3,2,1
+        //3,4,5,6,2,1
     }
 }

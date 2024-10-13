@@ -1,28 +1,28 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
+import data_structures.search.Node;
+
 /**
  * @author Sahil on 12/06/2024
  */
 public class ValidateBST {
-     static boolean flag=true;
-    public static boolean validateBST(Node node){
-        if (node==null){
-            return flag;
+    public boolean helper(Node root, Integer lower, Integer upper){
+        if(root==null){
+            return true;
         }
-        validateBST(node.left);
-        if (node.left!=null) {
-            if (node.data < node.left.data) {
-                flag = false;
-                return flag;
-            }
+        if (lower != null && root.data <= lower) {
+            return false;
         }
-        if (node.right!=null){
-            if (node.data>node.right.data){
-                flag=false;
-                return flag;
-            }
+        if (upper != null && root.data >= upper) {
+            return false;
         }
-        validateBST(node.right);
-        return flag;
+        if(!helper(root.left,lower,root.data)){
+            return false;
+        }
+        if(!helper(root.right,root.data,upper)){
+            return false;
+        }
+        return true;
     }
+
 }

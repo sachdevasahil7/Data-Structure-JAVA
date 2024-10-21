@@ -9,53 +9,62 @@ import java.util.*;
 public class TestClass {
 
     public static void main(String[] args) {
-        List<Object>arr= new ArrayList<>();
-        List<Object>temp1=new ArrayList<>();
-//        int[] arr2={1,0};
-        int[] arr2={2};
-        arr.add(5);
-        arr.add(2);
-        temp1.add(7);
-        temp1.add(-1);
-        arr.add(temp1);
-        arr.add(3);
-        List<Object>temp=new ArrayList<>();
-        List<Object>temp2=new ArrayList<>();
-        temp.add(6);
-        temp2.add(-13);
-        temp2.add(8);
-        temp.add(temp2);
-        temp.add(4);
-        arr.add(temp);
+//        List<Object>arr= new ArrayList<>();
+//        List<Object>temp1=new ArrayList<>();
+////        int[] arr2={1,0};
+//        int[] arr2={2};
+//        arr.add(5);
+//        arr.add(2);
+//        temp1.add(7);
+//        temp1.add(-1);
+//        arr.add(temp1);
+//        arr.add(3);
+//        List<Object>temp=new ArrayList<>();
+//        List<Object>temp2=new ArrayList<>();
+//        temp.add(6);
+//        temp2.add(-13);
+//        temp2.add(8);
+//        temp.add(temp2);
+//        temp.add(4);
+//        arr.add(temp);
 //        System.out.println(Arrays.toString(arr.toArray()));
-        System.out.println(removeElement(arr2,3));
+        System.out.println(getNthFib(6));
         int[] arr3={-5, -2, 5, 2, 4, 7, 1, 8, 0,-8};
         int[] arr14={5,0,0,6,1,6,2,2,4};
 //        System.out.println(Arrays.toString(intersection(arr3,arr14)));
 //        System.out.println(Arrays.toString(arrange(arr2,arr2.length)));
     }
 
-
-
-    public static int[] rearrangeArray(int[] nums) {
-        int[] ans = new int[nums.length];
-
-        int posIndex = 0;  // To hold even indices for positive numbers
-        int negIndex = 1;  // To hold odd indices for negative numbers
-
-        for (int num : nums) {
-            if (num > 0) {
-                ans[posIndex] = num;
-                posIndex += 2;  // Move to the next even index
-            } else {
-                ans[negIndex] = num;
-                negIndex += 2;  // Move to the next odd index
-            }
+    public static int getNthFib(int n) {
+        if (n == 2) {
+            return 1;
+        } else if (n == 1) {
+            return 0;
+        } else {
+            int sum = getNthFib(n - 1) + getNthFib(n - 2);
+            System.out.println(sum);
+            return sum;
         }
 
-        return ans;
     }
+        public static int[] rearrangeArray ( int[] nums){
+            int[] ans = new int[nums.length];
 
+            int posIndex = 0;  // To hold even indices for positive numbers
+            int negIndex = 1;  // To hold odd indices for negative numbers
+
+            for (int num : nums) {
+                if (num > 0) {
+                    ans[posIndex] = num;
+                    posIndex += 2;  // Move to the next even index
+                } else {
+                    ans[negIndex] = num;
+                    negIndex += 2;  // Move to the next odd index
+                }
+            }
+
+            return ans;
+    }
 
 
 

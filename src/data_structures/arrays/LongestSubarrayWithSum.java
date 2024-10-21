@@ -8,98 +8,31 @@ import java.util.*;
  */
 public class LongestSubarrayWithSum {
     public static void main(String[] args) {
-        int[]arr={0, 0, 0, 0, 0, 1, 0, 0, 0, 0};
-        System.out.println(Arrays.toString(longestSubArray(arr,1)));
+        int[]arr={1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10};
+        System.out.println(Arrays.toString(longestSubarrayWithSum(arr,15)));
     }
-
-    public static int[] longestSubarrayWithSum(int[] array, int targetSum) {
-        if(array.length==1){
-            if (array[0]==targetSum){
-                return new int[]{0};
-            }else{
-                return new int[]{};
-            }
-        }
-        TreeMap<Integer,Integer[]> map= new TreeMap<>();
-        for(int i=0;i<array.length-1;i++){
-            int startIdx=array[i];
-            if (startIdx==targetSum){
-                map.put(1 , new Integer[]{i, i});
-            }
-            int left=i+1;
-            int sum=startIdx+array[left];
-            while(targetSum>=sum) {
-                if (sum == targetSum) {
-                    map.put(left-i , new Integer[]{i, left});
+    public static int[] longestSubarrayWithSum(int[] arr, int target) {
+        int[] result = new int[]{-1, -1};
+        int sum=0;
+        int endIndex=0;
+        int startIndex=0;
+        int max=-1;
+        while(endIndex<arr.length) {
+            sum += arr[endIndex]; ///first endIndex increase 15+6=21
+            if (sum==target){ ///sum==target
+                int currentDiff=endIndex-startIndex;  //endIndex index and startIndex index   4 --->6
+                if(max<currentDiff){
+                    max=currentDiff;
+                    result[0]=startIndex;
+                    result[1]=endIndex;
                 }
-                    left = left + 1;
-
-                if (left>=array.length){
-                    break;
+            }
+            endIndex++;
+            while (sum>target){  //sum>target 21   15
+                sum-=arr[startIndex]; //21-1 ==20-2 =18 -3=
+                startIndex++;
                 }
-                sum=sum+array[left];
             }
-        }
-        if (!map.isEmpty()) {
-            return Arrays.stream(map.get(map.lastKey()))
-                    .mapToInt(Integer::intValue)
-                    .toArray();
-        }
-        return new int[]{0};
+        return result;
     }
-    public static int[] longestArray(int[] array,int target){
-        TreeMap<Integer,Integer[]>map= new TreeMap<>();
-        int index=0;
-        int j=index+1;
-        int sum=array[index];
-        while(index<array.length-2){
-            if (j==array.length){
-                index++;
-                j=index;
-                sum=array[index];
-            }
-            sum=sum+array[j];
-            if(sum==target){
-                map.put(j-index,new Integer[]{index,j});
-                index++;
-                j=index;
-                sum=array[index];
-            }else  if (sum>target){
-                index++;
-                j=index;
-                sum=array[index];
-            }
-            j++;
-        }
-        if (!map.isEmpty())
-        return Arrays.stream(map.lastEntry().getValue()).mapToInt(Integer::intValue).toArray();
-       return new int[]{};
-    }
-
-    public static int[] longestSubArray(int[] array,int target){
-        TreeMap<Integer,Integer[]>map= new TreeMap<>();
-        int index=0;
-        int j=1;
-        int sum=array[index];
-        while(index<array.length-2&&j<array.length-1){
-          sum=sum+array[j];
-          if(sum==target){
-              map.put(j-index,new Integer[]{index,j});
-              index=j;
-          }
-          else if(sum>target){
-              index++;
-              j=index+1;
-              sum=array[index];
-          }else{
-              j++;
-          }
-        }
-        if (!map.isEmpty())
-            return Arrays.stream(map.lastEntry().getValue()).mapToInt(Integer::intValue).toArray();
-        return new int[]{};
-    }
-
-
-
 }

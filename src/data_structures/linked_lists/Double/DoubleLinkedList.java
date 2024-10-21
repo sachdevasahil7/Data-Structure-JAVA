@@ -9,18 +9,14 @@ public class DoubleLinkedList {
     private Node tail;
     private int size=0;
 public Node createList(int value){
-    Node node= new Node();
-    node.value=value;
-    node.prev=null;
-    node.next=null;
+    Node node= new Node(value);
     head=node;
     tail=node;
     size++;
     return head;
 }
 public void insertNode(int value,int location){
-    Node newNode= new Node();
-    newNode.value=value;
+    Node newNode= new Node(value);
     if(head==null){
         createList(value);
         return;
@@ -55,12 +51,32 @@ public void insertNode(int value,int location){
     }
     Node node=head;
     int index =0;
-    while (index<size-1){
-        System.out.print("--->"+node.value+"-->");
+    while (index<=size-1){
+        System.out.print("---"+node.value+"<----->");
         node=node.next;
         index++;
     }
 }
+
+public boolean search(int val){
+    if(tail.value==val){
+        return true;
+    }else if(head.value==val){
+        return true;
+    }else{
+        Node temp=head;
+        while (temp!=null){
+            if(temp.value==val){
+                return true;
+            }
+            temp=temp.next;
+
+        }
+    }
+    return false;
+}
+
+
 public void deleteNode(int location){
     if(size==0){
         System.out.println("Cannot Delete Already an Empty List");

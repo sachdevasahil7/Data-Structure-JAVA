@@ -10,10 +10,7 @@ public class FindDuplicateNumber {
 
     public static void main(String[] args) {
         int[] duplicate={3,5,2,4};
-        String  haystack = "sadbutsad";
-        String needle = "sad";
 
-//        System.out.println(countPairs(Arrays.asList(duplicate),2));
         System.out.println(maxNumOfMarkedIndices(duplicate));
     }
     public static int maxNumOfMarkedIndices(int[] nums) {

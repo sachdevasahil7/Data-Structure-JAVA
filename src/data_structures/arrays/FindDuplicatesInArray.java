@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class FindDuplicatesInArray {
     public static void main(String[] args) {
-        int[]arr={4, 3, 2, 7, 2, 3, 1};
+        int[]arr={4,4, 3, 2, 7, 2, 3, 1};
         System.out.println(Arrays.toString(findDuplicates(arr).toArray()));
     }
 //this method only good when we have condition that the number of elements are not greater than the

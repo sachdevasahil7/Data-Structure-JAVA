@@ -11,6 +11,7 @@ public class LargestRange {
 //        int[] arr={1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6};
         int[] arr={0, -5, 9, 19, -1, 18, 17, 2, -4, -3, 10, 3, 12, 5, 16, 4, 11, 7, -6, -7, 6, 15, 12, 12, 2, 1, 6, 13, 14, -2};
         //0,1,2,3,4,5,6,7,10,11,12,15
+
         System.out.println(Arrays.toString(largestRange(arr)));
     }
     public static int[] largestRange(int[] arr) {

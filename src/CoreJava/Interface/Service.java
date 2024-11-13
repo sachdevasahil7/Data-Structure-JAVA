@@ -5,6 +5,9 @@ package CoreJava.Interface;
  */
 public interface Service {
 
+    default void name(){
+        System.out.println("TANNU");
+    }
     public void interfaceService();
     public void cost();
 }

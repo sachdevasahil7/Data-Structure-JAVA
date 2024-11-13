@@ -1,9 +1,7 @@
-package data_structures.search;
+package data_structures.tree;
 
 
-import data_structures.trees.binary_search_tree.BinaryTree.LeftViewOfBinaryTree;
 import data_structures.trees.binary_search_tree.BinaryTree.TopViewOfBST;
-import data_structures.trees.binary_search_tree.BinaryTree.ValidateBST;
 
 import java.util.Objects;
 
@@ -12,12 +10,14 @@ import java.util.Objects;
  */
 public class BinarySearchTree {
 private static Node rootNode;
+
+
     public void insert(int value){
+        Node newNode= new Node(value);
         if (Objects.isNull(rootNode)){
-            rootNode= new Node(value);;
+            rootNode= newNode;
             return;
         }
-        Node newNode= new Node(value);
         Node currentNode=rootNode;
         while(true){
             //left
@@ -86,9 +86,8 @@ private static Node rootNode;
 //we need to check 3 cases
     /*
     * 1: node has no child
-    * 2: node has one child;
+    * 2: node has one child
     * 3: node has two child
-
     *
     * */
     public Node deleteNode(Node rootNode,int val){   //val =66   , root=66
@@ -100,7 +99,7 @@ private static Node rootNode;
      }else if(val>rootNode.data){ //same for the right node
          rootNode.right=deleteNode(rootNode.right,val);
      }else{//here when we found value equal to node val then this else block run
-         if (rootNode.left==null||rootNode.right==null){ // checking 1: prop (no child)
+         if (rootNode.left==null||rootNode.right==null){ // checking 0: no child and 1: prop (1 child)
              Node temp=rootNode.left==null?rootNode.right:rootNode.left; //checking if one child
              if(temp==null){
                  return null;

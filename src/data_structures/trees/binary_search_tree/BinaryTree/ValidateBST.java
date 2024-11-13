@@ -1,6 +1,6 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
-import data_structures.search.Node;
+import data_structures.tree.Node;
 
 /**
  * @author Sahil on 12/06/2024

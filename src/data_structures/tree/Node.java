@@ -1,4 +1,4 @@
-package data_structures.search;
+package data_structures.tree;
 
 /**
  * @author Sahil on 11/10/2024

@@ -10,9 +10,6 @@ import static data_structures.trees.binary_search_tree.BinaryTree.TreeDepth.node
  * @author Sahil on 01/06/2024
  */
 public class BinarySearchTree {
-
-
-
     /*
     *  inOrder traverse means it traverse on
     * left node

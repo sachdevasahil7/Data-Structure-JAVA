@@ -1,6 +1,6 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
-import data_structures.search.Node;
+import data_structures.tree.Node;
 
 import java.util.*;
 

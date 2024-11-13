@@ -1,5 +1,7 @@
 package data_structures.trees.binary_search_tree.BinaryTree;
 
+import data_structures.tree.Node;
+
 import java.util.ArrayList;
 
 /**
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  */
 public class LeftViewOfBinaryTree {
 
-    public static void leftView(data_structures.search.Node node){
+    public static void leftView(Node node){
         ArrayList<Integer> list= new ArrayList<>();
         int level=0;
         helper(node,level,list);
@@ -17,7 +19,7 @@ public class LeftViewOfBinaryTree {
         }
     }
 
-    public static void helper(data_structures.search.Node node,int level,ArrayList<Integer>list){
+    public static void helper(Node node, int level, ArrayList<Integer>list){
         if (node==null){
             return;
         }
